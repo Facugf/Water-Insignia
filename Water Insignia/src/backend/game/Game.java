@@ -50,7 +50,8 @@ public class Game {
 			String string="";
 			for(int i = 0; i < this.getHeight(); i++){
 				for(int j = 0; j < this.getWidth(); j++){
-					string+=this.getTile(i, j);
+					string+="(" + this.getTile(i, j).getPositionX() + ",";
+					string+= this.getTile(i, j).getPositionY() + ")";
 					if(this.getPiece(this.getTile(i, j))!=null){
 						string+=this.getPiece(this.getTile(i, j)).getName() + " ";
 					}
