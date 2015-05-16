@@ -19,7 +19,7 @@ public abstract class Piece {
 	private int team;
 	private int movement;
 	private String name;
-	private int hola3;
+	
 	
 	public Piece(int maxHealth, int team, int movement, Weapon weapon, String name){
 		this.health=maxHealth;
@@ -36,9 +36,10 @@ public abstract class Piece {
 	}
 	
 /**
- * 
- * @param damage
- * @return
+ * Reduce la health de la pieza.
+ * @param damage Daño realizado sobre la pieza
+ * @return true Si mato a la pieza
+ * 			false Caso contrario
  */
 	public boolean receiveDamage(int damage){
 		if(health<=damage){
@@ -109,6 +110,12 @@ public abstract class Piece {
 		return "health=" + health + " team=" + team + " weapon=" + weapon + " movement=" + movement + " maxHealth=" + maxHealth;
 	}
 	
+	/**
+	 * Ataca a la pieza ubicada en una tile
+	 * @param targetTile Tile donde debe efectuarse el ataque
+	 * @return true si pudo atacar a la pieza
+	 * false si no habia pieza, se encuentra fuera de rango o es del mismo equipo
+	 */
 	public boolean attack(Tile targetTile){
 		if(Game.getInstance().getPiece(targetTile)==null){
 			return false;
@@ -123,6 +130,12 @@ public abstract class Piece {
 		return true;
 	}
 	
+	/**
+	 * Mueve la pieza a otra Tile.
+	 * @param targetTile Tile a donde se moverá la pieza
+	 * @return true si pudo mover la pieza
+	 * false si la Tile está ocupada o está fuera de rango
+	 */
 	public boolean move(Tile targetTile){
 		if(Game.getInstance().getPiece(targetTile)!=null){
 			return false;
