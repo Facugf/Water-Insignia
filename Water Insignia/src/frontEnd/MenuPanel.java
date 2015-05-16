@@ -13,12 +13,17 @@ import backend.weapons.warriorweapon.ShortSword;
 
 public class MenuPanel extends JPanel{
 	
-	private MatchModel matchUI = new MatchModel(8,8,10,2);
+	private JButton w1Button;
+	private JButton upButton;
+	private JButton downButton;
+	private JButton leftButton;
+	private JButton rightButton;
+	
 	public MenuPanel(){
 		setLayout(null);
 		setSize(1280, 720);
 		Dimension size = getSize();
-		JButton w1Button = new JButton("W1");
+		w1Button = new JButton("W1");
 		w1Button.setBounds(size.width/2 - 290, 1, 180, 90);
 		JButton w2Button = new JButton("W2");
 		w2Button.setBounds(size.width/2 - 90, 1, 180, 90);
@@ -28,13 +33,13 @@ public class MenuPanel extends JPanel{
 		this.add(w2Button);
 		this.add(w3Button);
 		
-		JButton upButton = new JButton("UP");
+		upButton = new JButton("UP");
 		upButton.setBounds(size.width/2 - 400, 91, 180, 90);
-		JButton downButton = new JButton("DOWN");
+		downButton = new JButton("DOWN");
 		downButton.setBounds(size.width/2 - 200, 91, 180, 90);
-		JButton leftButton = new JButton("LEFT");
+		leftButton = new JButton("LEFT");
 		leftButton.setBounds(size.width/2 , 91, 180, 90);
-		JButton rightButton = new JButton("RIGHT");
+		rightButton = new JButton("RIGHT");
 		rightButton.setBounds(size.width/2 + 200, 91, 180, 90);
 		
 		this.add(upButton);
@@ -42,14 +47,30 @@ public class MenuPanel extends JPanel{
 		this.add(leftButton);
 		this.add(rightButton);
 		
-		w1Button.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				matchUI.deployPiece(new Warrior(matchUI.getPlayerTurn(), new ShortSword()));
-			}
-		});
 		
+		}
+	void addW1Listener(ActionListener warrior1Listener){
+		
+		w1Button.addActionListener(warrior1Listener);	
 	}
+	
+	void addDownListener(ActionListener downListener){
+		downButton.addActionListener(downListener);
+	}
+	
+	void addUpListener(ActionListener upListener){
+		upButton.addActionListener(upListener);
+	}
+	
+	void addLeftListener(ActionListener leftListener){
+		leftButton.addActionListener(leftListener);
+	}
+	
+	void addRightListener(ActionListener rightListener){
+		rightButton.addActionListener(rightListener);
+	}
+		
+	
 	
 	
 }

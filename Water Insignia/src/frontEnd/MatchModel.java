@@ -13,7 +13,7 @@ import backend.weapons.warriorweapon.ShortSword;
 
 public class MatchModel { 	
 
-	private int x; //Ya no son final. Mal?
+	private int x;
 	private int y;
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private int playerTurn;
@@ -30,7 +30,42 @@ public class MatchModel {
 		this.tileSelected=new Tile(0,0);
 	}
 	
+	
+	public int getX(){
+		return this.x;
+	}
 
+	public int getY(){
+		return this.y;
+	}
+
+	private void setX(int x){
+		this.x = x;
+	}
+
+	private void setY(int y){
+		this.y = y;
+	}
+
+	public void addX(int numberToAdd){
+		if(this.x+numberToAdd>=0 && this.x+numberToAdd < Game.getInstance().getWidth()){
+			setX(this.x+numberToAdd);
+		}
+		
+	}
+
+	public void addY(int numberToAdd){
+		if(this.y+numberToAdd>=0 && this.y+numberToAdd < Game.getInstance().getHeight()){
+			setY(this.y+numberToAdd);
+		}
+	}
+	
+	public void seePosition(){
+		System.out.println("("+ x + "," + y + ")");
+		if((Game.getInstance().getPiece(Game.getInstance().getTile(x, y)))!=null){
+			System.out.println(Game.getInstance().getPiece(Game.getInstance().getTile(x, y)));
+		}
+	}
 
 
 

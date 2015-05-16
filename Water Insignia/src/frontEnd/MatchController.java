@@ -1,5 +1,7 @@
 package frontEnd;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -18,16 +20,73 @@ public class MatchController {
 		
 		this.model=model;
 		this.view=view;
+		this.view.getPanel().addW1Listener(new Warrior1Listener() );
+		this.view.getPanel().addDownListener(new DownListener());
+		this.view.getPanel().addUpListener(new UpListener());
+		this.view.getPanel().addRightListener(new RightListener());
+		this.view.getPanel().addLeftListener(new LeftListener());
+		
+		
+		}
+	
+	class Warrior1Listener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		
+			model.deployPiece(new Warrior(model.getPlayerTurn(), new ShortSword()));
+			model.seePosition();
+		}
+		
+	}
+	
+	class DownListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			model.addY(1);
+			model.seePosition();
+		}
+			
+	}
+	
+	class UpListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			model.addY(-1);
+			model.seePosition();
+		}
+			
+	}
+	
+	class LeftListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			model.addX(-1);
+			model.seePosition();
+		}
+			
+	}
+	
+	class RightListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			model.addX(1);
+			model.seePosition();
+		}
+			
 	}
 	
 	
 	/*
-	public void seePosition(int x, int y){
-		System.out.println("("+ x + "," + y + ")");
-		if((Game.getInstance().getPiece(Game.getInstance().getTile(x, y)))!=null){
-			System.out.println(Game.getInstance().getPiece(Game.getInstance().getTile(x, y)));
-		}
-	}
+	
 	*/
 	
 	/*
@@ -116,30 +175,6 @@ public class MatchController {
 	}
 	*/
 	
-	/*
-	public int getX(){
-		return this.x;
-	}
-
-	public int getY(){
-		return this.y;
-	}
-
-	public void setX(int x){
-		this.x = x;
-	}
-
-	public void setY(int y){
-		this.y = y;
-	}
-
-	public void addX(int numberToAdd){
-		setX(this.x+numberToAdd);
-	}
-
-	public void addY(int numberToAdd){
-		setX(this.y+numberToAdd);
-	}
-	*/
+	
 
 }

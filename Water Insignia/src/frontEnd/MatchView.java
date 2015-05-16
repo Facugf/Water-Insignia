@@ -9,9 +9,10 @@ import javax.swing.JPanel;
 
 public  class MatchView extends JFrame{
 	
+	private MenuPanel panel;
+	
 	public MatchView(){
-		JPanel panel = new MenuPanel();
-		//panel.setLayout(new FlowLayout());
+		
 		setTitle("Water Insignia");
 		setSize(1280,720);
 		setResizable(true);
@@ -20,12 +21,17 @@ public  class MatchView extends JFrame{
 		Toolkit toolkit = getToolkit();
 		Dimension size = toolkit.getScreenSize();
 		setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
+		panel = new MenuPanel();
 		this.add(panel);
 		
 		
 		
 		
 		
+	}
+
+	public MenuPanel getPanel() {
+		return this.panel;
 	}
 	
 }
