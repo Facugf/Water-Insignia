@@ -1,11 +1,9 @@
 package frontEnd;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public  class MatchView extends JFrame{
 	

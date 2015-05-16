@@ -5,8 +5,6 @@ import backend.game.Tile;
 
 public abstract class SkillPieceTarget extends SkillTarget {
 
-	private int range;
-	
 	public SkillPieceTarget(int range){
 		super(range);
 	}

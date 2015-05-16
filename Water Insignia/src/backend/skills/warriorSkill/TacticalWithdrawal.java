@@ -1,6 +1,5 @@
 package backend.skills.warriorSkill;
 
-import backend.game.Game;
 import backend.game.Tile;
 import backend.piece.Piece;
 import backend.skills.skillType.SkillEmptyTileTarget;

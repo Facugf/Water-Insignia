@@ -14,6 +14,8 @@ import backend.weapons.warriorweapon.ShortSword;
 public class MenuPanel extends JPanel{
 	
 	private JButton w1Button;
+	private JButton w2Button;
+	private JButton w3Button;
 	private JButton upButton;
 	private JButton downButton;
 	private JButton leftButton;
@@ -23,12 +25,14 @@ public class MenuPanel extends JPanel{
 		setLayout(null);
 		setSize(1280, 720);
 		Dimension size = getSize();
+		
 		w1Button = new JButton("W1");
 		w1Button.setBounds(size.width/2 - 290, 1, 180, 90);
-		JButton w2Button = new JButton("W2");
+		w2Button = new JButton("W2");
 		w2Button.setBounds(size.width/2 - 90, 1, 180, 90);
-		JButton w3Button = new JButton("W3");
+		w3Button = new JButton("W3");
 		w3Button.setBounds(size.width/2 + 110, 1, 180, 90);
+		
 		this.add(w1Button);
 		this.add(w2Button);
 		this.add(w3Button);

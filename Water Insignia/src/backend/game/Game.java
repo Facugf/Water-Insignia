@@ -1,11 +1,6 @@
 package backend.game;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import backend.piece.*;
-
-
 
 public class Game {
 		private static Game instanceGame = null;

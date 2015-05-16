@@ -1,7 +1,5 @@
 package backend.game;
 
-import backend.piece.Piece;
-
 public class Board {
 
 	private int width;
