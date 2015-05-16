@@ -22,8 +22,8 @@ public class TestWarrior {
 	@Before
 	public void initialize(){
 		
-		game = new Game(10,10);
-		DiegoWarrior=new Warrior (1, new ShortSword(), game.getBoard());
+		Game.createGame(10,10);
+		DiegoWarrior=new Warrior (1, new ShortSword());
 	}
 	
 	@Test
