@@ -7,8 +7,9 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public  class View extends JFrame{
-	public View(){
+public  class MatchView extends JFrame{
+	
+	public MatchView(){
 		JPanel panel = new MenuPanel();
 		//panel.setLayout(new FlowLayout());
 		setTitle("Water Insignia");

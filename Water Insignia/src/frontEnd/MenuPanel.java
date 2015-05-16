@@ -1,21 +1,19 @@
 package frontEnd;
 
 import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import backend.game.Game;
 import backend.piece.Warrior;
 import backend.weapons.warriorweapon.ShortSword;
 
 
 public class MenuPanel extends JPanel{
 	
-	private Match matchUI = new Match(8,8,10,2);
+	private MatchModel matchUI = new MatchModel(8,8,10,2);
 	public MenuPanel(){
 		setLayout(null);
 		setSize(1280, 720);
@@ -29,6 +27,20 @@ public class MenuPanel extends JPanel{
 		this.add(w1Button);
 		this.add(w2Button);
 		this.add(w3Button);
+		
+		JButton upButton = new JButton("UP");
+		upButton.setBounds(size.width/2 - 400, 91, 180, 90);
+		JButton downButton = new JButton("DOWN");
+		downButton.setBounds(size.width/2 - 200, 91, 180, 90);
+		JButton leftButton = new JButton("LEFT");
+		leftButton.setBounds(size.width/2 , 91, 180, 90);
+		JButton rightButton = new JButton("RIGHT");
+		rightButton.setBounds(size.width/2 + 200, 91, 180, 90);
+		
+		this.add(upButton);
+		this.add(downButton);
+		this.add(leftButton);
+		this.add(rightButton);
 		
 		w1Button.addActionListener(new ActionListener(){
 			@Override
