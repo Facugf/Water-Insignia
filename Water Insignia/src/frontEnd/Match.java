@@ -73,7 +73,7 @@ public class AL extends KeyAdapter{
 		
 		
 		if(keyCode==e.VK_1){
-			Piece newPiece = new Warrior(players.get(playerTurn-1).getTeam(), new ShortSword());
+			Piece newPiece = new Warrior(playerTurn, new ShortSword()); //Cambie esto
 			deployPiece(newPiece);
 			System.out.println(Game.getInstance());
 		}
@@ -142,6 +142,10 @@ public boolean deployPiece (Piece newPiece){
 	return false;
 }
 
+public int getPlayerTurn(){
+	return this.playerTurn;
+}
+
 /*
 public int getX(){
 	return this.x;
@@ -168,12 +172,7 @@ public void addY(int numberToAdd){
 }
 */
 
-public static void main(String[] args) {
-	Display d=new Display();
-	Match match = new Match(8,8,10,2);
-	AL keyL1=match.new AL();
-	d.addKeyListener(keyL1);
-	}
+
 
 }
 

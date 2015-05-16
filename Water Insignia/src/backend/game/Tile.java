@@ -48,6 +48,22 @@ public class Tile {
 		}
 	}
 	
+	@Override
+	public boolean equals(Object o){
+		if(o==null){
+			return false;
+		}
+		if(o.getClass()!=Tile.class){
+			return false;
+		}
+		if(this.positionX == ((Tile) o).getPositionX() && this.positionY == ((Tile) o).getPositionY()){
+			if(this.piece.equals(((Tile)o).getPiece())){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 
 
 }

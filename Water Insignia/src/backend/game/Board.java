@@ -46,5 +46,21 @@ public class Board {
 	public Tile getTile(int positionX, int positionY){
 		return (this.board[positionX][positionY]);
 	}
+	/*
+	 * @Override
+	public boolean equals(Object o){
+		if(o==null){
+			return false;
+		}
+		if(o.getClass()!=Board.class){
+			return false;
+		}		
+		
+		return false;
+	}
+	 * (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	
 	
 }
