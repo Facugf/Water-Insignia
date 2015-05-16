@@ -19,7 +19,7 @@ public abstract class Piece {
 	private int team;
 	private int movement;
 	private String name;
-	private int hola1;
+	private int hola3;
 	
 	public Piece(int maxHealth, int team, int movement, Weapon weapon, String name){
 		this.health=maxHealth;
